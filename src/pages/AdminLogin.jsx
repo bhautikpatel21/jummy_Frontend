@@ -53,7 +53,7 @@ const AdminLogin = () => {
   const getUserProfile = async (adminToken) => {
     try {
       const response = await axios.get(
-        "http://localhost:7410/api/admin/login/get-admin",
+        "https://jummy-backend.onrender.com/api/admin/login/get-admin",
         {
           headers: {
             Authorization: `Bearer ${adminToken}`,
@@ -77,7 +77,7 @@ const AdminLogin = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:7410/api/admin/login/login-admin",
+        "https://jummy-backend.onrender.com/api/admin/login/login-admin",
         {
           email: loginEmail,
           password: loginPassword,
@@ -102,7 +102,7 @@ const AdminLogin = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:7410/api/admin/login/register-admin",
+        "https://jummy-backend.onrender.com/api/admin/login/register-admin",
         {
           username: registerUsername,
           email: registerEmail,
@@ -126,7 +126,7 @@ const AdminLogin = () => {
   const confirmLogout = async () => {
     try {
       await axios.post(
-        " http://localhost:7410/api/admin/login/logout-admin",
+        " https://jummy-backend.onrender.com/api/admin/login/logout-admin",
         {},
         {
           headers: {
@@ -156,7 +156,7 @@ const AdminLogin = () => {
     }
 
     try {
-      const response = await axios.get("http://localhost:7410/api/admin/login/get-all-admin", {
+      const response = await axios.get("https://jummy-backend.onrender.com/api/admin/login/get-all-admin", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -174,7 +174,7 @@ const AdminLogin = () => {
     setLoading(true);
     try {
       const response = await axios.put(
-        "http://localhost:7410/api/admin/login/update-admin",
+        "https://jummy-backend.onrender.com/api/admin/login/update-admin",
         {
           username: updatedUsername,
           email: updatedEmail,
@@ -201,7 +201,7 @@ const AdminLogin = () => {
     setLoading(true);
     try {
       await axios.put(
-        `http://localhost:7410/api/admin/login/update-password?adminId=${userProfile._id}`,
+        `https://jummy-backend.onrender.com/api/admin/login/update-password?adminId=${userProfile._id}`,
         {
           oldPassword,
           newPassword,
@@ -273,7 +273,7 @@ const AdminLogin = () => {
     try {
       console.log("Attempting to delete user with ID:", userId);
       const response = await axios.delete(
-        `http://localhost:7410/api/admin/login/delete-admin`,
+        `https://jummy-backend.onrender.com/api/admin/login/delete-admin`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
