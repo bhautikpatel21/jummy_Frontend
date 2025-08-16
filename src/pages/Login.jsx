@@ -52,7 +52,7 @@ const Login = () => {
   const getUserProfile = async (userToken) => {
     try {
       const response = await axios.get(
-        "http://localhost:7410/api/user/login/get-user",
+        "https://jummy-backend.onrender.com/api/user/login/get-user",
         {
           headers: {
             Authorization: `Bearer ${userToken}`,
@@ -75,7 +75,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:7410/api/user/login/login-user",
+        "https://jummy-backend.onrender.com/api/user/login/login-user",
         {
           email: loginEmail,
           password: loginPassword,
@@ -100,7 +100,7 @@ const Login = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:7410/api/user/login/register",
+        "https://jummy-backend.onrender.com/api/user/login/register",
         {
           username: registerUsername,
           email: registerEmail,
@@ -124,7 +124,7 @@ const Login = () => {
   const confirmLogout = async () => {
     try {
       await axios.post(
-        "http://localhost:7410/api/user/login/logout-user",
+        "https://jummy-backend.onrender.com/api/user/login/logout-user",
         {},
         {
           headers: {
@@ -152,7 +152,7 @@ const Login = () => {
     setLoading(true);
     try {
       const response = await axios.put(
-        "http://localhost:7410/api/user/login/update-user",
+        "https://jummy-backend.onrender.com/api/user/login/update-user",
         {
           username: updatedUsername,
           email: updatedEmail,
@@ -179,7 +179,7 @@ const Login = () => {
     setLoading(true);
     try {
       await axios.put(
-        `http://localhost:7410/api/user/login/update-password?userId=${userProfile._id}`,
+        `https://jummy-backend.onrender.com/api/user/login/update-password?userId=${userProfile._id}`,
         {
           oldPassword,
           newPassword,
