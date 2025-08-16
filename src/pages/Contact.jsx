@@ -146,7 +146,7 @@ function Contact() {
     e.preventDefault();
   
     try {
-      const response = await axios.post("http://localhost:7410/api/user/email/sendm", formData);
+      const response = await axios.post("https://jummy-backend.onrender.com/api/user/email/sendm", formData);
       setResponseMessage(response.data.message);
       setFormData({ name: "", email: "", phone: "", message: "" });
     } catch (error) {
